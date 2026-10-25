@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Яна Щеглова — продуктовый дизайнер</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#141515;--surface:#1C1E1D;--surface-2:#252826;--line:#252826;--line-strong:#3A3E3C;--text:#EDEFEE;--text-2:#9CA19E;--accent:#50B48C;--on-accent:#141515;--radius-l:24px;--radius-m:16px;--radius-s:12px;--gutter:120px;--ease:cubic-bezier(.2,.7,.2,1);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Geologica',system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:8px}
+.container{width:100%;padding:0 var(--gutter)}
+.nw{white-space:nowrap}
+/* header / footer */
+.site-header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--surface)}
+.bar{height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.caps{font-weight:300;font-size:16px;line-height:20px;text-transform:uppercase;letter-spacing:.01em}
+.nav{display:flex;gap:40px;align-items:center}
+.link{position:relative;display:inline-block;padding:6px 0;transition:color .25s var(--ease)}
+.link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.link:hover{color:var(--accent)}
+.link:hover::after{transform:scaleX(1);transform-origin:left}
+.site-footer{margin-top:80px;border-top:1px solid var(--surface)}
+.site-footer .bar{height:140px}
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 24px;border:1px solid var(--line-strong);border-radius:var(--radius-m);font-weight:300;font-size:16px;line-height:20px;overflow:hidden;isolation:isolate;transition:border-color .35s var(--ease),color .35s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:translateX(-101%);transition:transform .45s var(--ease)}
+.btn svg{transition:transform .4s var(--ease)}
+.btn svg path{transition:stroke .35s var(--ease)}
+.btn:hover{border-color:var(--accent);color:var(--on-accent)}
+.btn:hover::before{transform:translateX(0)}
+.btn:hover svg path{stroke:var(--on-accent)}
+.btn--back::before{transform:translateX(101%)}
+.btn--back:hover svg{transform:translateX(-4px)}
+/* images */
+.pic{position:relative;overflow:hidden;background:var(--surface-2)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* type */
+h2{margin:0;font-weight:400;font-size:40px;line-height:52px;letter-spacing:-.01em}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{padding:8px 16px;border-radius:var(--radius-s);background:var(--surface-2);color:var(--text-2);font-size:16px;line-height:20px;transition:color .3s var(--ease)}
+/* ---------- home ---------- */
+.hero{padding-top:40px;display:grid;grid-template-columns:minmax(0,1.42fr) minmax(0,1fr);gap:24px 72px;align-items:center}
+.intro{container-type:inline-size;min-width:0}
+.headline{width:fit-content;max-width:100%}
+.hello{font-size:24px;line-height:30px}
+.intro h1{margin:8px 0 0;font-weight:600;font-size:54px;font-size:clamp(28px,8.2cqi,112px);line-height:1.1;letter-spacing:-.02em;white-space:nowrap}
+h1 .accent{color:var(--accent)}
+.summary{margin:16px 0 0;width:0;min-width:100%;font-size:18px;line-height:28px;color:var(--text-2);text-wrap:pretty}
+.experience{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.job{position:relative;min-height:174px;padding:24px;border-radius:var(--radius-l);background:var(--surface);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;transition:transform .45s var(--ease)}
+.job--current{grid-column:1/-1}
+.job .logo{position:absolute;top:24px;right:24px;z-index:-1;transition:transform .6s var(--ease)}
+.job:hover{transform:translateY(-4px)}
+.job:hover .logo{transform:translateY(-3px) rotate(-3deg) scale(1.06)}
+.role{font-weight:500;font-size:18px;line-height:20px}
+.company{margin-top:8px;font-size:16px;line-height:20px}
+.years{margin-top:4px;font-weight:300;font-size:14px;line-height:18px}
+.now{color:var(--accent)}
+.cases{margin-top:80px}
+.cases h2{margin-bottom:24px}
+.case-list{display:flex;flex-direction:column;gap:40px}
+.case{position:relative;display:grid;grid-template-columns:minmax(0,483fr) minmax(0,677fr);gap:40px;align-items:center;padding:40px;border-radius:var(--radius-l);background:var(--surface);border:1px solid transparent;overflow:hidden;isolation:isolate;transition:border-color .35s var(--ease);--mx:50%;--my:30%}
+.case--rev{grid-template-columns:minmax(0,677fr) minmax(0,483fr)}
+.case--rev .case-text{order:2}
+.case::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(520px circle at var(--mx) var(--my),rgba(80,180,140,.10),transparent 60%);opacity:0;transition:opacity .4s var(--ease)}
+.case:hover::before{opacity:1}
+.case:hover,.case:focus-visible{border-color:var(--accent)}
+.case:focus-visible{outline:none}
+.case:hover .tag{color:var(--text)}
+.case:hover .btn svg{transform:translateX(4px)}
+.case-title{margin:24px 0 0;font-weight:500;font-size:32px;line-height:36px;text-wrap:balance}
+.case-desc{margin:24px 0 0;color:var(--text-2);font-size:16px;line-height:20px}
+.case-text .btn{margin-top:24px}
+.preview{aspect-ratio:677/526;border-radius:var(--radius-m)}
+.preview::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(237,239,238,.05) 50%,transparent 70%);transform:translateX(-100%);transition:transform 1.1s var(--ease)}
+.case:hover .preview::after{transform:translateX(100%)}
+.preview img{transition:transform .9s var(--ease)}
+.case:hover .preview img{transform:scale(1.02)}
+/* ---------- case pages ---------- */
+.back{margin-top:40px}
+.case-hero{padding-top:40px}
+.label{font-size:14px;line-height:20px;text-transform:uppercase;letter-spacing:.02em;color:var(--accent)}
+.label--muted{color:var(--text-2)}
+.case-h1{margin:16px 0 0;max-width:900px;font-weight:600;font-size:64px;line-height:70px;letter-spacing:-.02em}
+.lead{margin:16px 0 0;max-width:845px;font-size:18px;line-height:24px;color:var(--text-2)}
+.media{border-radius:var(--radius-l);background:var(--surface);aspect-ratio:1280/600}
+.media--wide{aspect-ratio:1280/720}
+.case-hero .media{margin-top:40px}
+.facts-wrap{margin-top:40px;border-top:1px solid var(--surface)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-top:40px;margin:0}
+.facts dt{font-size:14px;line-height:20px;text-transform:uppercase;letter-spacing:.02em;color:var(--text-2)}
+.facts dd{margin:8px 0 0;font-size:18px;line-height:24px}
+.sec{margin-top:80px}
+.sec h2{margin-top:8px}
+.sec > .reveal:first-child + *{margin-top:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.stack{display:flex;flex-direction:column;gap:24px}
+.card{border-radius:var(--radius-l);background:var(--surface);padding:40px;display:flex;flex-direction:column}
+.card--accent{border:1px solid var(--accent);padding:39px}
+@media (max-width:720px){.card--accent{padding:23px}}
+.card--tall{min-height:100%;padding:0;overflow:hidden}
+.card--tall .pic{position:absolute;inset:0;background:var(--surface)}
+.card--tall{position:relative}
+.num{font-size:16px;line-height:20px;color:var(--accent)}
+.card-title{margin:18px 0 0;font-weight:500;font-size:24px;line-height:30px}
+.card > .card-title:first-child{margin-top:0}
+.card-text{margin:8px 0 0;font-weight:300;font-size:16px;line-height:22px;color:var(--text-2)}
+.card--img{padding-bottom:0}
+.card-img{margin-top:auto;padding-top:20px}
+.card-img .pic{aspect-ratio:548/170;border-radius:var(--radius-m) var(--radius-m) 0 0}
+.decision .card-text{margin-top:18px;font-weight:400;font-size:18px;line-height:24px;max-width:1200px}
+.decision .pic{margin-top:48px;border-radius:var(--radius-m);aspect-ratio:1200/916}
+.decision .pic--short{aspect-ratio:1200/740}
+.stat-value{font-weight:500;font-size:48px;line-height:56px;color:var(--accent)}
+.stat-label{margin-top:6px;font-size:16px;line-height:20px;color:var(--text-2)}
+.card-h{margin:0;font-weight:400;font-size:24px;line-height:30px}
+.dots{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+.dots li{position:relative;padding-left:16px;font-size:18px;line-height:24px;color:var(--text-2)}
+.dots li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--text-2)}
+.card-p{margin:24px 0 0;font-size:16px;line-height:22px;color:var(--text-2)}
+.step-top{display:flex;justify-content:space-between;gap:12px;font-size:14px;line-height:20px;text-transform:uppercase;letter-spacing:.02em;color:var(--text-2)}
+.step .card-title{margin-top:16px}
+.step-note{margin-top:auto;padding-top:20px;font-size:16px;line-height:20px;color:var(--accent)}
+.next{margin-top:120px;border-top:1px solid var(--surface)}
+.next-in{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:80px 0}
+.next-link{display:block;flex:1 1 auto;min-width:0}
+.next-title{margin:8px 0 0;font-weight:400;font-size:40px;line-height:46px;letter-spacing:-.01em;transition:color .3s var(--ease)}
+.next-link:hover .next-title{color:var(--accent)}
+.next-in:hover .btn svg{transform:translateX(4px)}
+.next + .site-footer{margin-top:0}
+/* motion */
+.js .rise{opacity:0;transform:translateY(18px)}
+.js.loaded .rise{opacity:1;transform:none;transition:opacity .8s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.js h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.js h1 .w>span{display:inline-block;transform:translateY(105%)}
+.js.loaded h1 .w>span{transform:none;transition:transform 1s var(--ease);transition-delay:calc(260ms + var(--i,0)*110ms)}
+.js .reveal{opacity:0;transform:translateY(40px) scale(.985)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform 1.1s var(--ease)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rise,.js .reveal,.js h1 .w>span{opacity:1!important;transform:none!important}}
+/* responsive */
+@media (max-width:1180px){.hero{grid-template-columns:1fr}.experience{max-width:640px}}
+@media (max-width:900px){.grid2,.facts{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.case,.case--rev{grid-template-columns:1fr;gap:28px}.case--rev .case-text{order:0}.case .pic{order:-1}}
+@media (max-width:720px){:root{--gutter:20px}.bar{height:64px}.bar > a,.bar .link{padding:12px 0}.nav{gap:20px}.caps{font-size:14px}.hero{padding-top:28px}.hello{font-size:18px;line-height:24px}.summary{font-size:16px;line-height:25px}.job{min-height:150px;padding:18px}.job .logo{top:18px;right:18px;transform-origin:top right;scale:.8}.role{font-size:16px}.company{font-size:14px}h2{font-size:32px;line-height:40px}.intro h1{white-space:normal;font-size:clamp(30px,10vw,40px);line-height:1.1}.case{padding:16px 16px 24px}.case-title{font-size:28px;line-height:34px;margin-top:16px}.case-desc{margin-top:12px}.case-text .btn{margin-top:20px;height:48px}.tag{padding:6px 12px;font-size:14px}.site-footer .bar{height:auto;padding-top:32px;padding-bottom:32px}.case-h1{font-size:clamp(30px,10vw,40px);line-height:1.15;overflow-wrap:break-word}.lead{font-size:16px;line-height:23px}.card{padding:24px}.card--img{padding-bottom:0}.card--tall{padding:0;aspect-ratio:628/714}.decision .card-text{font-size:16px;line-height:23px}.decision .pic{margin-top:24px}.stat-value{font-size:36px;line-height:42px}.next-in{flex-direction:column;align-items:flex-start;padding:48px 0}.next-title{font-size:32px;line-height:38px}.grid4{grid-template-columns:1fr 1fr;gap:12px}.grid4.steps{grid-template-columns:1fr}.media{border-radius:var(--radius-m)}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container bar">
+  <a class="caps" href="index.html">Ys</a>
+  <nav class="nav caps" aria-label="Контакты"><a class="link" href="https://t.me/ya_shcheglova" target="_blank" rel="noopener">Telegram</a></nav>
+</div></header>
+<main class="container">
+  <section class="hero" aria-label="Обо мне">
+    <div class="intro"><div class="headline">
+      <div class="hello rise" style="--i:0">Яна Щеглова</div>
+      <h1><span class="w" style="--i:0"><span>Продуктовый</span></span> <span class="w accent" style="--i:1"><span>дизайнер</span></span></h1>
+      <p class="summary rise" style="--i:4">Продуктовый дизайнер с&nbsp;опытом более 7&nbsp;лет в&nbsp;проектировании <span class="nw">B2B- и&nbsp;B2C-продуктов</span>. Проектирую сложные пользовательские сценарии и&nbsp;интерфейсы для&nbsp;финансовых сервисов, web и&nbsp;mobile. Веду дизайн от&nbsp;<span class="nw">UX-логики</span> и&nbsp;пользовательских флоу до&nbsp;UI и&nbsp;сопровождения реализации.</p>
+    </div></div>
+    <div class="experience" aria-label="Опыт работы">
+      <article class="job job--current rise" style="--i:2"><svg class="logo" width="117" height="48" viewBox="0 0 117 48" fill="none" aria-hidden="true"><path d="M103.935 15.098C101.927 12.9479 99.0061 11.8728 95.1728 11.8728C92.9022 11.8266 90.6452 12.2454 88.5344 13.1046C86.6443 13.895 85.0377 15.2629 83.9332 17.0222C83.6782 17.4289 83.4547 17.8553 83.2646 18.2977C82.8314 17.0877 82.1609 15.9813 81.2946 15.047C79.2656 12.9187 76.3344 11.8546 72.5012 11.8546C70.3957 11.8239 68.3079 12.2499 66.3747 13.1046C64.5585 13.9278 63.027 15.2931 61.9797 17.0222C61.7927 17.3279 61.623 17.6443 61.4712 17.9697V12.7584H51.8704V47.8458H61.7485V25.6665C61.7485 23.1713 62.3576 21.4379 63.576 20.4661C64.7945 19.4943 66.3959 19.0083 68.3801 19.0083C69.5342 18.9723 70.6841 19.1731 71.7615 19.5987C72.6592 19.9867 73.3833 20.7041 73.7919 21.6104C74.2423 22.5579 74.4675 23.9099 74.4675 25.6665V47.8566H84.3456V25.7357C84.3456 24.0351 84.6275 22.6988 85.1918 21.727C85.7236 20.7876 86.5457 20.0567 87.5279 19.6498C88.6265 19.2112 89.7985 18.9982 90.9772 19.0229C92.1212 18.9839 93.2612 19.1848 94.3266 19.6133C95.215 20.0155 95.9349 20.7286 96.357 21.625C96.8312 22.5725 97.0683 23.9245 97.0683 25.6811V37.6927H106.946V25.3786C106.946 20.6629 105.942 17.236 103.935 15.098Z" fill="#252826"/><path d="M116.843 37.704H106.947V47.8461H116.843V37.704Z" fill="#252826"/><path d="M32.8484 2.28863C29.4421 0.76045 25.2355 -0.00242375 20.2289 5.78463e-06H0V47.8461H20.2289C25.2355 47.8461 29.4421 47.071 32.8484 45.5209C36.2227 44.0047 38.9667 41.3164 40.5965 37.9299C42.3532 34.4168 43.2325 29.7473 43.2351 23.9212C43.2351 18.0077 42.3554 13.3042 40.5965 9.81046C38.9641 6.44225 36.2184 3.77684 32.8484 2.28863ZM32.8164 26.4176C32.8164 29.5152 32.3305 31.9886 31.3586 33.8375C30.4285 35.6547 28.8931 37.0693 27.0312 37.8243C25.1111 38.6358 22.7761 39.0404 20.0263 39.0378H10.2016V8.79007H20.012C24.2079 8.79007 27.3879 9.72666 29.5523 11.5998C31.7166 13.473 32.8 16.6314 32.8022 21.075L32.8164 26.4176Z" fill="#252826"/></svg><div class="role">Product Designer</div><div class="company">Denum Tech</div><div class="years">2023 – <span class="now">сейчас</span></div></article>
+      <article class="job rise" style="--i:3"><svg class="logo" width="36" height="56" viewBox="0 0 36 56" fill="none" aria-hidden="true"><path opacity=".7" d="M22.5182 30.7891C15.4986 26.2289 32.3185 0.00789325 32.3185 0.00789325C32.2195 -0.424374 -1.18599 16.9851 0.0325433 30.7843L22.5182 30.7891Z" fill="#252826"/><path opacity=".8" d="M13.471 25.2107C20.4853 29.7661 3.68103 55.9919 3.68103 55.9919C3.78518 56.4289 37.1908 39.0147 35.967 25.2202L13.471 25.2107Z" fill="#252826"/></svg><div class="role">UX/UI Designer</div><div class="company">SharkSoftware</div><div class="years">2022 – 2023</div></article>
+      <article class="job rise" style="--i:4"><svg class="logo" width="73" height="56" viewBox="0 0 73 56" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M35.3251 20.3552C33.527 20.3552 32.0694 18.8969 32.0694 17.0987C32.0694 15.3005 33.527 13.8422 35.3251 13.8422C37.1237 13.8422 38.5808 15.3005 38.5808 17.0987C38.5808 18.8969 37.1232 20.3552 35.3251 20.3552ZM59.5943 23.6117C59.5943 22.3039 60.6544 21.2437 61.962 21.2437C63.2695 21.2437 64.3297 22.3039 64.3297 23.6117C64.3297 24.9195 63.2695 25.9796 61.962 25.9796C60.6544 25.9796 59.5943 24.9195 59.5943 23.6117ZM24.9663 32.4926C24.9663 30.6938 26.4239 29.2361 28.222 29.2361C30.0201 29.2361 31.4777 30.6944 31.4777 32.4926C31.4777 34.2908 30.0201 35.7491 28.222 35.7491C26.4239 35.7491 24.9663 34.2914 24.9663 32.4926ZM14.6069 21.2432C15.915 21.2432 16.9746 22.3033 16.9746 23.6111C16.9746 24.9189 15.9144 25.9791 14.6069 25.9791C13.2993 25.9791 12.2397 24.9189 12.2397 23.6111C12.2397 22.3033 13.2993 21.2432 14.6069 21.2432ZM37.3437 10.9083C36.7074 10.7014 36.0308 10.5852 35.3251 10.5852C31.7289 10.5852 28.8142 13.5012 28.8142 17.0982C28.8142 20.6952 31.7294 23.6111 35.3251 23.6111C38.9207 23.6111 41.836 20.6952 41.836 17.0982C41.836 15.42 41.1965 13.8955 40.1541 12.7403L46.7908 0.948812C52.0308 1.99104 56.2482 3.82186 59.6346 6.09151L52.0286 11.1435C51.4778 10.7921 50.8254 10.5857 50.1235 10.5857C48.1619 10.5857 46.5714 12.1765 46.5714 14.1388C46.5714 16.1005 48.1613 17.6907 50.1235 17.6907C52.0845 17.6907 53.675 16.1005 53.675 14.1388C53.675 13.9145 53.6519 13.6961 53.6121 13.4832L62.0405 7.88486C67.232 12.1841 70.0542 17.5375 71.5269 22.0801H66.4295C65.8287 20.2259 64.1038 18.885 62.0663 18.885C59.5303 18.885 57.4745 20.9608 57.4745 23.5215C57.4745 26.0823 59.5303 28.1586 62.0663 28.1586C64.1049 28.1586 65.8309 26.816 66.4306 24.9597H72.3187C72.8447 27.2831 73.0093 29.2122 72.9996 30.4C72.9749 33.329 72.2138 37.6978 69.4696 42.3071L62.2581 36.1614C62.4237 35.7514 62.5168 35.3044 62.5168 34.8351C62.5168 32.8734 60.9263 31.2827 58.9647 31.2827C57.0031 31.2827 55.4126 32.8734 55.4126 34.8351C55.4126 36.7968 57.0031 38.3876 58.9647 38.3876C59.4149 38.3876 59.843 38.3007 60.2389 38.1481L67.885 44.6762C64.9149 48.6767 60.3258 52.7044 53.3109 56C53.3109 56 55.3613 46.375 49.2312 43.7925L49.2263 34.0133C51.0691 33.4088 52.4014 31.6627 52.4014 29.6005C52.4014 27.0371 50.3435 24.9586 47.8047 24.9586C45.266 24.9586 43.2081 27.0371 43.2081 29.6005C43.2081 31.6611 44.5382 33.4056 46.3788 34.0117V43.1804C46.1761 43.1696 45.9754 43.156 45.7619 43.156C42.9822 43.156 39.8566 43.446 36.5697 43.7567L32.7449 37.1715C33.9691 35.987 34.7334 34.3305 34.7334 32.4926C34.7334 28.8956 31.8176 25.9796 28.222 25.9796C24.6263 25.9796 21.7111 28.8956 21.7111 32.4926C21.7111 36.0896 24.6263 39.0056 28.222 39.0056C28.7738 39.0056 29.3074 38.929 29.8194 38.7997L32.8944 44.094C25.3842 44.7392 17.4022 44.995 10.9322 41.928L14.5165 38.7655C14.9124 38.9181 15.3411 39.0056 15.7913 39.0056C17.7529 39.0056 19.3434 37.4148 19.3434 35.4531C19.3434 33.4908 17.7534 31.9001 15.7913 31.9001C13.8302 31.9001 12.2397 33.4908 12.2397 35.4531C12.2397 35.9218 12.3328 36.3693 12.4979 36.7788L8.30306 40.4801C4.92578 38.3549 2.87811 35.9566 1.65983 33.5832L11.8299 27.2695C12.5877 27.8257 13.5188 28.1586 14.5284 28.1586C17.0671 28.1586 19.125 26.0823 19.125 23.5215C19.125 20.9608 17.0671 18.885 14.5284 18.885C11.9896 18.885 9.93119 20.9608 9.93119 23.5215C9.93119 23.8724 9.97368 24.2134 10.0468 24.5426L0.487817 30.4788C-0.156551 27.9267 -0.0414465 25.5712 0.151649 23.8251C0.432416 21.2937 1.85938 13.4126 9.65042 7.40149L18.3021 13.1481C18.2106 13.4626 18.159 13.7944 18.159 14.1388C18.159 16.1005 19.7489 17.6907 21.7111 17.6907C23.6721 17.6907 25.2626 16.1005 25.2626 14.1388C25.2626 12.1765 23.6727 10.5857 21.7111 10.5857C21.1393 10.5857 20.6004 10.7248 20.1211 10.9648L12.1607 5.67766C17.535 2.38859 25.3067 0 36.5552 0C38.9428 0 41.1739 0.137407 43.2646 0.389409L37.3437 10.9083ZM45.3881 29.5951C45.3881 28.2878 46.4488 27.2272 47.7558 27.2272C49.0628 27.2272 50.1235 28.2878 50.1235 29.5951C50.1235 30.9035 49.0628 31.9636 47.7558 31.9636C46.4488 31.9636 45.3881 30.9035 45.3881 29.5951Z" fill="#252826"/></svg><div class="role">UX/UI Designer</div><div class="company">Jupser</div><div class="years">2019 – 2022</div></article>
+    </div>
+  </section>
+  <section class="cases" id="cases" aria-labelledby="cases-title">
+    <h2 id="cases-title" class="reveal">Кейсы</h2>
+    <div class="case-list">
+      <a class="case reveal" href="case-jibili.html"><div class="case-text"><div class="tags"><span class="tag">B2C</span><span class="tag">Mobile</span><span class="tag">2026</span></div><h3 class="case-title">JiBiLi: займы до&nbsp;зарплаты для&nbsp;индийского рынка</h3><span class="btn">К кейсу <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H4" stroke="#9CA19E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 17s5-3.682 5-5-5-5-5-5" stroke="#9CA19E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="pic preview"><img src="images/home-jibili.jpg" alt="" loading="lazy" onerror="this.remove()"></div></a>
+      <a class="case case--rev reveal" href="case-partner.html"><div class="case-text"><div class="tags"><span class="tag">B2B</span><span class="tag">Web</span><span class="tag">2025</span></div><h3 class="case-title">Личный кабинет партнера</h3><span class="btn">К кейсу <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12H4" stroke="#9CA19E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 17s5-3.682 5-5-5-5-5-5" stroke="#9CA19E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><div class="pic preview"><img src="images/home-partner.jpg" alt="" loading="lazy" onerror="this.remove()"></div></a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container bar">
+  <span class="caps">Ys</span>
+  <nav class="nav caps" aria-label="Контакты"><a class="link" href="https://t.me/ya_shcheglova" target="_blank" rel="noopener">Telegram</a></nav>
+</div></footer>
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('loaded');});});
+  var items=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('in');});}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.06,rootMargin:'0px 0px -40px 0px'});items.forEach(function(el){io.observe(el);});}
+  document.querySelectorAll('.case').forEach(function(card){card.addEventListener('pointermove',function(ev){var r=card.getBoundingClientRect();card.style.setProperty('--mx',(ev.clientX-r.left)+'px');card.style.setProperty('--my',(ev.clientY-r.top)+'px');});});
+  var h1=document.querySelector('.intro h1'), intro=document.querySelector('.intro');
+  if(h1&&intro){var fit=function(){h1.style.fontSize='';var a=intro.clientWidth,w=h1.scrollWidth;if(w>a)h1.style.fontSize=(parseFloat(getComputedStyle(h1).fontSize)*a/w*0.99)+'px';};fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);window.addEventListener('resize',fit);}
+})();
+</script>
+</body>
+</html>
